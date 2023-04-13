@@ -41,13 +41,14 @@ def main(argv: Sequence[str] | None = None) -> int:
     args = parser.parse_args(argv)
 
     for filename in args.filenames:
-        with fileinput.input(filename, inplace=True) as f:
-            for line in f:
-                for link in REGEX_OBSIDIAN_LINK.findall(line):
-                    new_link = parse_link(link, filename)
-                    if new_link:
-                        line = line.replace(link, new_link)
-                print(line, end='')
+        if filename.endswith('.md'):
+            with fileinput.input(filename, inplace=True) as f:
+                for line in f:
+                    for link in REGEX_OBSIDIAN_LINK.findall(line):
+                        new_link = parse_link(link, filename)
+                        if new_link:
+                            line = line.replace(link, new_link)
+                    print(line, end='')
 
     return PASS
 
