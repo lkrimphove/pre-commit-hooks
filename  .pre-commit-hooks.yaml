@@ -1,0 +1,6 @@
+-   id: parse-obsidian-links
+    name: parse obsidian links
+    description: parses Obsidian.md links to regular Markdown links.
+    entry: parse-obsidian-links
+    language: python
+    stages: [commit, push, manual]
