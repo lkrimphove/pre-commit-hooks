@@ -1,6 +1,6 @@
 # pre-commit-hooks
 
-Some useful hooks for pre-commit.
+A collection of useful hooks for pre-commit.
 
 See also:
 - https://github.com/pre-commit/pre-commit
@@ -12,7 +12,7 @@ Add this to your `.pre-commit-config.yaml`
 
 ```yaml
 -   repo: https://github.com/l.krimphove/pre-commit-hooks
-    rev: v1.0  # Use the ref you want to point at
+    rev: v0.1.0  # Use the ref you want to point at
     hooks:
     -   id: parse-obsidian-links
     # -   id: ...
